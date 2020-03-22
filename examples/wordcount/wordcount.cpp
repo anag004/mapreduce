@@ -54,13 +54,13 @@ mapreduce::hash_partitioner::operator()(
 
 // use case insensitive string comparison for matching words
 template<>
-constexpr
+// constexpr
 bool std::less<std::pair<char const *, std::uintmax_t> >::operator()(
          std::pair<char const *, std::uintmax_t> const &first,
          std::pair<char const *, std::uintmax_t> const &second) const
 {
-    return (STRNICMP(first.first, second.first, std::min(first.second, second.second)) < 0)
-         || ((first.second < second.second)  &&  (STRNICMP(first.first, second.first, std::min(first.second, second.second)) <= 0));
+    return (strncasecmp(first.first, second.first, std::min(first.second, second.second)) < 0)
+         || ((first.second < second.second)  &&  (strncasecmp(first.first, second.first, std::min(first.second, second.second)) <= 0));
 }
 
 namespace {

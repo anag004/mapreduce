@@ -19,6 +19,8 @@
 #include <thread>
 #include <cstdint>
 #include <boost/config.hpp>
+#include <functional>
+#include <ios>
 
 namespace mapreduce {
 namespace detail {

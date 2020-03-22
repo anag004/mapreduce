@@ -8,6 +8,12 @@ The MapReduce C++ Library implements a single-machine platform for programming u
     map (k1,v1) --> list(k2,v2)
     reduce (k2,list(v2)) --> list(v2)
 
+To run on MacOS use
+
+```
+clang++ -std=c++11 -I ~/lib/mapreduce/include/detail -I ~/lib/mapreduce/include/  prime.cpp -lboost_system -lpthread -lboost_iostreams -lboost_filesystem
+```
+
 Synopsis
 -
 
